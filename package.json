@@ -17,7 +17,9 @@
     "url": "https://github.com/loceyashley/Final_Project/issues"
   },
   "homepage": "https://github.com/loceyashley/Final_Project#readme",
-  "engines": {"node":"12.x"},
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1",

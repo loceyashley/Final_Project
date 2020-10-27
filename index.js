@@ -16,7 +16,23 @@ app.use(express.static("Public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 
+//get homepage
+app.get('/', function(req, res){
+     res.render('homepage');
+});
+
+//get random pic from api
+app.get('/RandomPic', function(req, res){
+    fetch('https://dog.ceo/api/breeds/image/random',)
+    .then(res => res.json())
+    .then(data => {
+        res.render('RandomPic', {data:data});
+    });
+})
+
+
 //server setup 
 app.listen(port,function(){
     console.log('listening on ' + port)
 });
+
