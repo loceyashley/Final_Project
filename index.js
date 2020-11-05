@@ -21,6 +21,11 @@ app.get('/', function(req, res){
      res.render('homepage');
 });
 
+//get contact
+app.get('/Contact', function(req, res){
+    res.render('Contact');
+})
+
 //get random pic from api
 app.get('/RandomPic', function(req, res){
     fetch('https://dog.ceo/api/breeds/image/random',)
