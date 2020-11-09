@@ -24,7 +24,7 @@ app.get('/', function(req, res){
 //get contact
 app.get('/Contact', function(req, res){
     res.render('Contact');
-})
+});
 
 //get random pic from api
 app.get('/RandomPic', function(req, res){
@@ -33,8 +33,13 @@ app.get('/RandomPic', function(req, res){
     .then(data => {
         res.render('RandomPic', {data:data});
     });
+
 })
 
+//get select dog breed form api
+app.get('/DogBreed', function(req, res){
+        res.render('DogBreed');
+});
 
 //server setup 
 app.listen(port,function(){

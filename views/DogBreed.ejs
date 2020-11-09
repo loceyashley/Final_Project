@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -30,18 +30,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <link rel="stylesheet" type="text/css" href="Public/style.css">
 
-    <title>Planet Canine</title>
+    <title>Select Breed</title>
   </head>
   <body>
   
      <!--Jumbotron-->
     <div class="jumbotron bg-dark text-white">
-        <h1 class="display-4">Welcome to Planet Canine!</h1>
-        <p class="lead"> Hello, and thank you for visiting our website. This website will be all about dog photos. If you visit the random page you can generate random dog photos as well as search by dog breed out our search page. Enjoy!</p>
+        <h1 class="display-4"> Selected Dog Breed</h1>
+        <p class="lead"></p>
         <hr class="my-4">
-         <p>Website Creators : Ashley Locey, Brandon Joiner, Kody Martinolich.</p>
-         <p>Visit our Contact Us page to learn more  </p>
+        <p>Please enjoy the selected dog breed photos generated for you.</p>
     </div> 
+    
+    <div class="container">
+        <h1>Choose Your Breed</h1>   
+        <form>
+             <label for="breed">Breed</label>
+                <input type="search" id="breed" name="breed" placeholder="Specify Breed"/>
+                <input type="submit" value="Show Dog">
+        </form>
+        
+    <!-- displaying image-->
+
+        <section class="results hidden">
+          <h2>Check This Dog Out</h2>
+          <img class="results-img">
+        </section>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
