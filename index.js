@@ -15,7 +15,6 @@ app.use(express.static("Public"));
 //tell app to use body parser
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 //get homepage
 app.get('/', function(req, res){
      res.render('homepage');
@@ -38,8 +37,14 @@ app.get('/RandomPic', function(req, res){
 
 //get select dog breed form api
 app.get('/DogBreed', function(req, res){
-        res.render('DogBreed');
-});
+      var dogBreed = req.body.breed;
+      console.log('dog name: ' + dogBreed);
+    fetch('https://dog.ceo/api/breed/'+dogBreed+'/images/random',)
+    .then(res => res.json())
+    .then(data => {
+        res.render('DogBreed', {data:data});
+    });
+})
 
 //server setup 
 app.listen(port,function(){

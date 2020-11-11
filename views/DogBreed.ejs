@@ -44,13 +44,18 @@
     
     <div class="container">
         <h1>Choose Your Breed</h1>   
-        <form>
+        <form method='GET' action="/DogBreed">
              <label for="breed">Breed</label>
-                <input type="search" id="breed" name="breed" placeholder="Specify Breed"/>
+                <input type="text" id="breed" name="breed" placeholder="Specify Breed">
                 <input type="submit" value="Show Dog">
         </form>
         
     <!-- displaying image-->
+        <center><div class="card mb-3" style="margin-top:15px; max-width: 540px;">
+        <h1>Random Dog:</h1>
+ <img class="picture" src="<%= data.message %>">
+ <%= data.message %>
+ </div></center>
 
         <section class="results hidden">
           <h2>Check This Dog Out</h2>
