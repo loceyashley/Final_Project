@@ -4,28 +4,30 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--nav bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/RandomPic">Random Dog Picture</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/DogBreed">Select Breed</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/Contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"         data-target="#navbarNav" aria-controls="navbarNav"    aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/RandomPic">Random Dog Picture</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/DogBreed">Select Breed</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Contact">Contact</a>
+        </li>
+        </ul>
+    </div>
+    </nav>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <link rel="stylesheet" type="text/css" href="Public/style.css">
@@ -33,6 +35,9 @@
     <title>Random Picture </title>
   </head>
   <body>
+
+    <!--background color-->
+    <body style="background-color:#D7D3CB;">
   
      <!--Jumbotron-->
     <div class="jumbotron bg-dark text-white">
@@ -44,10 +49,13 @@
 
         
     <!-- displaying image-->
-    <center><div class="card mb-3" style="margin-top:15px; max-width: 540px;">
-        <h1>Random Dog:</h1>
- <img class="picture" src="<%= data.message %>"">
- </div></center>
+    <center><div class="card mb-3" style="margin-top:15px; max-width: 540px; border: 1px solid black;">
+        <u><bold><h1>Random Dog Photo:</h1></bold></u>
+        <img style=" max-width:540px; border: 3px solid black;" class="picture" src="<%= data.message %>">
+    </div></center>
+
+    <!--Button-->
+    <center><a href="/RandomPic" style="margin-top:40px; margin-bottom:40px;" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Random</a></center>
      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
