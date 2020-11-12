@@ -21,5 +21,5 @@ CONTENTS OF THIS FILE
 
 *  Additional information
 
-    - This page is currently hosted in Heroku: 
+    - This page is currently hosted in Heroku: https://planetcanine.herokuapp.com
     - Github Link: 
