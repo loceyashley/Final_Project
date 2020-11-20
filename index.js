@@ -32,9 +32,14 @@ app.get('/RandomPic', function(req, res){
     .then(res => res.json())
     .then(data => {
         res.render('RandomPic', {data:data});
+     //   var url = data.message.split('/');
+    //    var breed = url[4];
+    
     });
-
 })
+
+
+
 
 //get select dog breed form api
 app.get('/DogBreed', function(req, res){
