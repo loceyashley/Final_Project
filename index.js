@@ -38,8 +38,18 @@ app.get('/RandomPic', function(req, res){
     });
 })
 
+app.post('/addBreed', function(req, res){
+    let breedData;
+    let breed;
+    fetch('https://dog.ceo/api/breeds/image/random',)
+    .then(res => res.json())
+    .then(data => {
+        breedData = data.message.split('/');
+        breed = breedData[4];
+        res.json(breed);
 
-
+    });
+})
 
 //get select dog breed form api
 app.get('/DogBreed', function(req, res){
