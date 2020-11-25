@@ -38,6 +38,7 @@ app.get('/RandomPic', function(req, res){
     });
 })
 
+
 app.post('/addBreed', function(req, res){
     let breedData;
     let breed;
@@ -46,8 +47,7 @@ app.post('/addBreed', function(req, res){
     .then(data => {
         breedData = data.message.split('/');
         breed = breedData[4];
-        res.json(breed);
-
+        res.send(breed);
     });
 })
 
