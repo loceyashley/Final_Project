@@ -54,8 +54,8 @@ app.get('/DogBreed', function(req, res){
     .then(res => res.json())
     .then(data => {
         dogList = data.message[1];
-        dogList2 =data.message[60];
-        dogList3=data.message[45];
+        dogList2 =data.message[5];
+        dogList3=data.message[10];
         data[showImage] = dogList;
         data[showImage2] = dogList2;
         data[showImage3] = dogList3;
