@@ -22,4 +22,4 @@ CONTENTS OF THIS FILE
 *  Additional information
 
     - This page is currently hosted in Heroku: https://planetcanine.herokuapp.com
-    - Github Link: 
+    - Github Link: https://github.com/loceyashley/Final_Project.git
