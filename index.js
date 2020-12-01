@@ -3,7 +3,9 @@ var express = require('express');
 //require body parser
 var bodyParser = require ("body-parser");
 //require node-fetch
- var fetch = require('node-fetch');
+var fetch = require('node-fetch');
+//require nodemailer
+const nodemailer = require('nodemailer');
 //create express object call express
 var app = express();
 //create port information 
@@ -16,6 +18,7 @@ app.use(express.static("Public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 var dogBreed = "beagle";
+var sent = false;
 //get homepage
 app.get('/', function(req, res){
      res.render('homepage');
@@ -23,7 +26,41 @@ app.get('/', function(req, res){
 
 //get contact
 app.get('/Contact', function(req, res){
-    res.render('Contact');
+    res.render('Contact',  { sent: sent });
+});
+
+app.post('/sendEmail', (req, res) => {
+    //intall the SMTP server
+    const smtpTrans = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'planetcanine2020@gmail.com', //Email specifically for this project
+            pass: 'SSPC_Final'
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    })
+    var user = req.body.email;
+    var message = req.body.message;
+    //specify what the email will look like
+    const mailOpts = {
+        from: user,
+        to: 'planetcanine2020@gmail.com',
+        subject: 'Planet Canine user sent a message!',
+        text: user + ' wrote: ' + message
+    }
+
+    smtpTrans.sendMail(mailOpts, function (err, res) {
+        if (err) {
+            console.error('there was an error: ', err);
+        }
+        else {
+            console.log("Message was sent!");
+            sent = true;
+        }
+    })
+    res.redirect('/Contact');
 });
 
 //get random pic from api

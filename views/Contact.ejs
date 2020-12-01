@@ -48,16 +48,16 @@
     </div> 
 
     <!-- insert contact form that sends to email-->
-    <center><form style="Width:800px;">
+    <center><form style="Width:800px;" action="/sendEmail" method="POST">
         <div class="form-group">
             <label for="exampleFormControlInput1">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Your Message Here"rows="3"></textarea>
+            <textarea name="message" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Your Message Here"rows="3"></textarea>
         </div>
-        <button>send mail</button>
+        <button type="submit">send mail</button>
         <p>
 
         </p>
