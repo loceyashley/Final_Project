@@ -46,15 +46,10 @@
         <hr class="my-4">
         <p>Please enjoy the random dog photo generated for you.</p>
     </div> 
-
-    <center><form action ="/addBreed" method="POST">
-        <button> Show Breed</button>
-    </form></center>
-
         
     <!-- displaying image-->
     <center><div class="card mb-3" style="margin-top:15px; max-width: 540px; border: 1px solid black;">
-        <u><bold><h1>Random Dog Photo:</h1></bold></u>  
+        <bold><h1>Breed: </bold>  <%= data.showBreed%></h1>
         <img style=" max-width:540px; border: 3px solid black;" class="picture" src="<%= data.message %>">
     </div></center>
 

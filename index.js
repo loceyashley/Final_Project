@@ -28,13 +28,17 @@ app.get('/Contact', function(req, res){
 
 //get random pic from api
 app.get('/RandomPic', function(req, res){
+    var breedData;
+    var breed;
+    var showBreed = "showBreed";
     fetch('https://dog.ceo/api/breeds/image/random',)
     .then(res => res.json())
     .then(data => {
+        breedData = data.message.split('/');
+        breed = breedData[4];
+        data[showBreed] = breed;
+        console.log(data);
         res.render('RandomPic', {data:data});
-     //   var url = data.message.split('/');
-    //    var breed = url[4];
-    
     });
 })
 
