@@ -42,24 +42,26 @@ app.get('/RandomPic', function(req, res){
     });
 })
 
-
-app.post('/addBreed', function(req, res){
-    let breedData;
-    let breed;
-    fetch('https://dog.ceo/api/breeds/image/random',)
-    .then(res => res.json())
-    .then(data => {
-        breedData = data.message.split('/');
-        breed = breedData[4];
-        res.send(breed);
-    });
-})
-
+var dogList = [];
+var dogList2 = [];
+var dogList3 = [];
+var showImage = "showImage";
+var showImage2 = "showImage2";
+var showImage3 = "showImage3";
 //get select dog breed form api
 app.get('/DogBreed', function(req, res){
-    fetch('https://dog.ceo/api/breed/'+dogBreed.toLowerCase()+'/images/random',)
+    fetch('https://dog.ceo/api/breed/'+dogBreed.toLowerCase()+'/images',)
     .then(res => res.json())
     .then(data => {
+        dogList = data.message[1];
+        dogList2 =data.message[60];
+        dogList3=data.message[45];
+        data[showImage] = dogList;
+        data[showImage2] = dogList2;
+        data[showImage3] = dogList3;
+        //console.log(dogList);
+       // console.log(dogList2);
+       //console.log(dogList3);
         res.render('DogBreed', {data:data});
     });
 })
