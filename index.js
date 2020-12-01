@@ -57,7 +57,7 @@ app.post('/addBreed', function(req, res){
 
 //get select dog breed form api
 app.get('/DogBreed', function(req, res){
-    fetch('https://dog.ceo/api/breed/'+dogBreed+'/images/random',)
+    fetch('https://dog.ceo/api/breed/'+dogBreed.toLowerCase()+'/images/random',)
     .then(res => res.json())
     .then(data => {
         res.render('DogBreed', {data:data});
